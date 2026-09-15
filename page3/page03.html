@@ -1,27 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plantas</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 479px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .menu { width: 100%; flex-wrap: wrap; justify-content: center; }
+            .acciones { justify-content: center; }
+            .titulo { font-size: 3rem; }
+            .productos { flex-direction: column; align-items: center; }
+            .producto { width: 90%; max-width: 300px; }
+            .footer { flex-direction: column; gap: 30px; }
+        }
+        @media (min-width: 480px) and (max-width: 899px) {
+            .navbar { flex-wrap: wrap; }
+            .menu { width: 100%; justify-content: center; }
+            .acciones { margin-left: auto; }
+            .titulo { font-size: 4rem; }
+            .productos { flex-wrap: wrap; justify-content: center; }
+            .producto { width: 45%; }
+            .footer { flex-wrap: wrap; }
+            .footer-columna { width: 45%; }
+        }
+        @media (min-width: 900px) and (max-width: 1199px) {
+            .productos { flex-wrap: wrap; }
+            .producto { width: 45%; }
+        }
+        @media (min-width: 1200px) {
+            .productos { flex-wrap: nowrap; }
+            .producto { width: 23%; }
+        }
+    </style>
 </head>
+
 <body class="bg-white text-black">
 
-  <!-- Barra superior -->
-  <div></div>
+    <!-- Barra superior -->
+    <div class="bg-[#666834] text-white text-center py-3 text-sm">
+        <span>-15% en la primera compra</span>
+        <button class="ml-4 border border-white/60 rounded-md px-3 py-1 hover:bg-white/10 transition">
+            Registrarse
+        </button>
+    </div>
 
-  <!-- Header -->
-  <header></header>
+    <!-- Header -->
+    <header class="bg-black text-white px-6 py-14">
+        <div class="navbar flex items-center justify-between max-w-[1450px] mx-auto">
+            <nav class="menu flex border border-gray-700 rounded-md overflow-hidden">
+                <a href="#" class="bg-[#d86600] px-5 py-3 font-medium">Plantas</a>
+                <a href="#" class="px-5 py-3 hover:bg-gray-800 transition">Macetas</a>
+                <a href="#" class="px-5 py-3 hover:bg-gray-800 transition">Oferta</a>
+                <a href="#" class="px-5 py-3 hover:bg-gray-800 transition">Suscripciones</a>
+                <a href="#" class="px-5 py-3 hover:bg-gray-800 transition">Cuidado</a>
+            </nav>
 
-  <!-- Productos -->
-  <main></main>
+            <div class="acciones flex items-center gap-6">
+                <button class="border border-gray-700 rounded-md px-5 py-3 flex items-center gap-2">
+                    <span class="text-xl">●</span>
+                    Entrar
+                </button>
+                <span class="text-xl">⌕</span>
+                <span>🛒 Carrito 0</span>
+            </div>
+        </div>
 
-  <!-- Footer -->
-  <footer></footer>
+        <h1 class="text-center font-['Raleway'] font-thin text-7xl mt-24 mb-8 tracking-wide">
+            Plantas
+        </h1>
+    </header>
 
-  <!-- Botón de mensaje -->
-  <button></button>
+    <!-- Productos -->
+    <main class="bg-[#dedbd0] px-10 py-8">
+        <div class="flex items-center justify-between mb-16">
+            <h2 class="font-['Raleway'] text-5xl">Recién llegados</h2>
+            <button class="bg-[#d86600] text-white px-6 py-4 rounded-md hover:bg-[#bd5900] transition">
+                Comprar todo
+            </button>
+        </div>
+
+        <section class="productos flex justify-between gap-8 max-w-[1400px] mx-auto">
+
+            <!-- primero -->
+            <article class="producto">
+                <div class="relative">
+                    <span class="absolute top-0 left-0 z-10 bg-[#666834] text-white px-4 py-1 text-sm">
+                        Recién llegado
+                    </span>
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.ksprDECExsGPOkGGtb9kTQHaFk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                         alt="Ficus lyrata"
+                         class="w-full h-[260px] object-cover transition duration-300 hover:opacity-[0.85] cursor-pointer">
+                </div>
+                <h3 class="font-serif text-2xl mt-4">Ficus lyrata</h3>
+                <p class="text-xl mt-1">$699.99</p>
+                <button class="w-full border border-gray-600 rounded-md py-3 mt-6 hover:bg-black hover:text-white transition">
+                    Agregar al carrito
+                </button>
+            </article>
+
+            <!-- segundo -->
+            <article class="producto">
+                <div class="relative">
+                    <span class="absolute top-0 left-0 z-10 bg-[#666834] text-white px-4 py-1 text-sm">
+                        Recién llegado
+                    </span>
+                    <img src="https://cdn.leroymerlin.com.br/products/cachepot_14,9x15,8cm_caramelo_moderno_ceramica_burguina_92278592_14e9_600x600.jpg"
+                         alt="Maceta oxidada"
+                         class="w-full h-[260px] object-cover transition duration-300 hover:opacity-[0.85] cursor-pointer">
+                </div>
+                <h3 class="font-serif text-2xl mt-4">Maceta oxidada</h3>
+                <p class="text-xl mt-1">$399.99</p>
+                <button class="w-full border border-gray-600 rounded-md py-3 mt-6 hover:bg-black hover:text-white transition">
+                    Agregar al carrito
+                </button>
+            </article>
+
+        </section>
+    </main>
 
 </body>
 </html>
