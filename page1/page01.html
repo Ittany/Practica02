@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensajes | Buzón</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .page01-main {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 55px 30px 100px;
+      }
+      .page01-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 1fr;
+        gap: 30px;
+      }
+      .page01-list {
+        width: 50%;
+      }
+      @media (min-width: 1400px) {
+        .page01-list {
+          width: 60%;
+        }
+      }
+      @media (max-width: 700px) {
+        .page01-main {
+          padding: 42px 20px 70px;
+        }
+        .page01-grid {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .page01-list {
+          width: 100%;
+        }
+      }
+      @media (max-width: 520px) {
+        .page01-grid {
+          gap: 22px;
+        }
+        .mail-row {
+          padding: 13px 12px !important;
+        }
+        .mail-preview {
+          white-space: normal !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">Buzón<span>.</span></a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a>
+        <a class="active" href="page01.html">Mensajes</a>
+        <a href="../page2/page02.html">Enviados</a>
+        <a href="../page3/page03.html">Importantes</a>
+      </nav>
+    </header>
+
+    <main class="page01-main">
+      <div class="mb-10">
+        <p class="eyebrow">BANDEJA DE ENTRADA</p>
+        <h1 class="mb-3 !text-5xl md:!text-6xl">Lista de mensajes</h1>
+        <p class="font-sans text-sm leading-6 text-[var(--muted)]">
+          Dos formas de consultar tus conversaciones.
+        </p>
+      </div>
+
+      <div class="page01-grid">
+        <section class="flex flex-col items-center" aria-labelledby="columna-a">
+          <div
+            class="mb-5 flex w-full items-center justify-between border-b border-[var(--line)] pb-3"
+          >
+            <h2
+              id="columna-a"
+              class="font-sans text-lg font-bold tracking-[0.18em] text-[var(--ink)]"
+            >
+              A
+            </h2>
+            <span class="font-sans text-xs text-[var(--muted)]"
+              >Vista con avatares</span
+            >
+          </div>
+          <div
+            class="page01-list overflow-hidden bg-[#202020] font-sans text-white shadow-xl"
+          >
+            <div
+              class="flex items-center justify-between bg-[#22bfd0] px-4 py-3 text-[#132329]"
+            >
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-label="Abrir menú"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span class="text-lg font-semibold">Bandeja</span>
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-label="Buscar"
+              >
+                <circle cx="11" cy="11" r="6" />
+                <path d="m16 16 4 4" />
+              </svg>
+            </div>
+            <p class="px-4 py-4 text-xs text-white/70">Hoy</p>
+            <div>
+              <a
+                class="mail-row flex gap-3 border-b border-white/5 px-4 py-3 transition hover:bg-white/5"
+                href="#reunion-viaje"
+              >
+                <span
+                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#b7c1bc] text-sm font-bold text-[#28363a]"
+                  >AC</span
+                >
+                <span class="min-w-0"
+                  ><strong class="block text-base font-medium"
+                    >Plan para el fin de semana</strong
+                  ><span class="block text-sm text-[#2386ac]"
+                    ><b>Lucía Herrera</b>
+                    <span class="text-white/75"
+                      >— Estaré cerca el sábado haciendo unas compras. ¿Te
+                      apetece tomar un café?</span
+                    ></span
+                  ></span
+                >
+              </a>
+              <a
+                class="mail-row flex gap-3 border-b border-white/5 px-4 py-3 transition hover:bg-white/5"
+                href="#cena-equipo"
+              >
+                <span
+                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#d5a57b] text-sm font-bold text-[#49342d]"
+                  >AS</span
+                >
+                <span class="min-w-0"
+                  ><strong class="block text-base font-medium"
+                    >Cena del equipo</strong
+                  ><span class="block text-sm text-[#2386ac]"
+                    ><b>Mateo Ríos</b>
+                    <span class="text-white/75"
+                      >— ¿Confirmamos el restaurante para la reunión del
+                      viernes?</span
+                    ></span
+                  ></span
+                >
+              </a>
+              <a
+                class="mail-row flex gap-3 border-b border-white/5 px-4 py-3 transition hover:bg-white/5"
+                href="#recomendaciones"
+              >
+                <span
+                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#d18ba8] text-sm font-bold text-[#542e42]"
+                  >SA</span
+                >
+                <span class="min-w-0"
+                  ><strong class="block text-base font-medium"
+                    >Recomendaciones para viajar</strong
+                  ><span class="block text-sm text-[#2386ac]"
+                    ><b>Clara Navarro</b>
+                    <span class="text-white/75"
+                      >— ¿Conoces algún sitio tranquilo para visitar durante el
+                      puente?</span
+                    ></span
+                  ></span
+                >
+              </a>
+              <a
+                class="mail-row flex gap-3 border-b border-white/5 px-4 py-3 transition hover:bg-white/5"
+                href="#cumpleanos"
+              >
+                <span
+                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#d7a29a] text-sm font-bold text-[#573731]"
+                  >TH</span
+                >
+                <span class="min-w-0"
+                  ><strong class="block text-base font-medium"
+                    >Regalo de cumpleaños</strong
+                  ><span class="block text-sm text-[#2386ac]"
+                    ><b>Diego Molina</b>
+                    <span class="text-white/75"
+                      >— ¿Se te ocurre alguna idea para el regalo de cumpleaños
+                      de Marta?</span
+                    ></span
+                  ></span
+                >
+              </a>
+              <a
+                class="mail-row flex gap-3 px-4 py-3 transition hover:bg-white/5"
+                href="#receta"
+              >
+                <span
+                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#d5aa73] text-sm font-bold text-[#4b3828]"
+                  >BH</span
+                >
+                <span class="min-w-0"
+                  ><strong class="block text-base font-medium"
+                    >Receta para probar</strong
+                  ><span class="block text-sm text-[#2386ac]"
+                    ><b>Elena Vargas</b>
+                    <span class="text-white/75"
+                      >— He encontrado una receta de pasta con verduras que
+                      podríamos preparar juntos.</span
+                    ></span
+                  ></span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col items-center" aria-labelledby="columna-b">
+          <div
+            class="mb-5 flex w-full items-center justify-between border-b border-[var(--line)] pb-3"
+          >
+            <h2
+              id="columna-b"
+              class="font-sans text-lg font-bold tracking-[0.18em] text-[var(--ink)]"
+            >
+              B
+            </h2>
+            <span class="font-sans text-xs text-[var(--muted)]"
+              >Vista compacta</span
+            >
+          </div>
+          <div
+            class="page01-list overflow-hidden bg-[#202020] font-sans text-white shadow-xl"
+          >
+            <div
+              class="flex items-center justify-between bg-[#eb1763] px-4 py-3 text-white"
+            >
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-label="Abrir menú"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span class="text-lg font-semibold">Bandeja</span>
+              <span class="flex items-center gap-3"
+                ><svg
+                  class="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-label="Buscar"
+                >
+                  <circle cx="11" cy="11" r="6" />
+                  <path d="m16 16 4 4" />
+                </svg>
+                <svg
+                  class="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-label="Marcar como leído"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="m7 12 3 3 7-7"
+                    fill="none"
+                    stroke="#eb1763"
+                    stroke-width="2"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div>
+              <a
+                class="mail-row flex items-start gap-3 border-b border-white/5 px-4 py-4 transition hover:bg-white/5"
+                href="#lucia"
+                ><span class="min-w-0 flex-1"
+                  ><strong class="block text-sm font-medium"
+                    >Lucía Herrera</strong
+                  ><span class="block text-sm font-medium"
+                    >Plan para el fin de semana</span
+                  ><span
+                    class="mail-preview block truncate text-xs leading-5 text-white/75"
+                    >Estaré cerca el sábado haciendo unas compras. ¿Te
+                    apetece...</span
+                  ></span
+                ><span
+                  class="flex flex-col items-end gap-4 text-xs text-white/60"
+                  ><time>15 min</time
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"
+                    /></svg></span
+              ></a>
+              <a
+                class="mail-row flex items-start gap-3 border-b border-[#5b2638] bg-[#3b202b] px-4 py-4 transition hover:bg-[#482432]"
+                href="#mateo"
+                ><span class="min-w-0 flex-1"
+                  ><strong class="block text-sm font-medium text-[#ef3777]"
+                    >Mateo Ríos</strong
+                  ><span class="block text-sm font-medium">Cena del equipo</span
+                  ><span
+                    class="mail-preview block truncate text-xs leading-5 text-white/75"
+                    >¿Confirmamos el restaurante para la reunión del
+                    viernes?</span
+                  ></span
+                ><span
+                  class="flex flex-col items-end gap-4 text-xs text-white/60"
+                  ><time>2 hr</time
+                  ><svg
+                    class="h-5 w-5 fill-[#ffb500] stroke-[#ffb500]"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"
+                    /></svg></span
+              ></a>
+              <a
+                class="mail-row flex items-start gap-3 border-b border-white/5 px-4 py-4 transition hover:bg-white/5"
+                href="#clara"
+                ><span class="min-w-0 flex-1"
+                  ><strong class="block text-sm font-medium"
+                    >Clara Navarro</strong
+                  ><span class="block text-sm font-medium"
+                    >Recomendaciones para viajar</span
+                  ><span
+                    class="mail-preview block truncate text-xs leading-5 text-white/75"
+                    >¿Conoces algún sitio tranquilo para visitar durante el
+                    puente?</span
+                  ></span
+                ><span
+                  class="flex flex-col items-end gap-4 text-xs text-white/60"
+                  ><time>6 hr</time
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"
+                    /></svg></span
+              ></a>
+              <a
+                class="mail-row flex items-start gap-3 border-b border-white/5 px-4 py-4 transition hover:bg-white/5"
+                href="#diego"
+                ><span class="min-w-0 flex-1"
+                  ><strong class="block text-sm font-medium"
+                    >Diego Molina</strong
+                  ><span class="block text-sm font-medium"
+                    >Regalo de cumpleaños</span
+                  ><span
+                    class="mail-preview block truncate text-xs leading-5 text-white/75"
+                    >¿Se te ocurre alguna idea para el regalo de cumpleaños de
+                    Marta?</span
+                  ></span
+                ><span
+                  class="flex flex-col items-end gap-4 text-xs text-white/60"
+                  ><time>12 hr</time
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="m12 3 2.8 5.7 6.2.9-4.5 4.4-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"
+                    /></svg></span
+              ></a>
+              <a
+                class="mail-row flex items-start gap-3 px-4 py-4 transition hover:bg-white/5"
+                href="#elena"
+                ><span class="min-w-0 flex-1"
+                  ><strong class="block text-sm font-medium"
+                    >Elena Vargas</strong
+                  ><span class="block text-sm font-medium"
+                    >Receta para probar</span
+                  ><span
+                    class="mail-preview block truncate text-xs leading-5 text-white/75"
+                    >He encontrado una receta de pasta con verduras que
+                    podríamos preparar juntos.</span
+                  ></span
+                ><span
+                  class="flex flex-col items-end gap-4 text-xs text-white/60"
+                  ><time>18 hr</time
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"
+                    /></svg></span
+              ></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      Práctica 02 <span aria-hidden="true">·</span> Gestión de mensajes
+    </footer>
+  </body>
+</html>
